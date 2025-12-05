@@ -8,6 +8,7 @@ Power profile picker for window managers using D-Bus!
 
 * [`dmenu`](https://tools.suckless.org/dmenu/)
 * [`rofi`](https://github.com/davatorium/rofi)
+* [`wofi`](https://github.com/SimplyCEO/wofi)
 * [`fuzzel`](https://codeberg.org/dnkl/fuzzel)
 
 ## Requirements
