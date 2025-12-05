@@ -2,6 +2,8 @@
 
 Power profile picker for window managers using D-Bus!
 
+<img src="./assets/demo.gif" alt="Demonstration of ppp" width="800">
+
 ## Supported launchers
 
 * [`dmenu`](https://tools.suckless.org/dmenu/)
