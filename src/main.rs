@@ -11,7 +11,7 @@ use powerprofile::PowerProfile;
 #[derive(FromArgs)]
 /// Power profile selector for power-profiles-daemon (or tlp-pd) using a dmenu-compatible launcher
 struct PPPArgs {
-    /// launcher to use (supported launchers are fuzzel, dmenu, rofi, wofi, tofi)
+    /// launcher to use (supported launchers are fuzzel, dmenu, bemenu, rofi, wofi, tofi)
     #[argh(option, short = 'l')]
     launcher: String,
 
@@ -51,8 +51,8 @@ fn get_command(launcher: &str, current_profile: PowerProfile, custom_args: Optio
                 .arg(&format!("Current profile: {}\n", current_profile.name()));
             cmd
         },
-        _ => {
-            let mut cmd = Command::new("dmenu");
+        _ => { // dmenu/bemenu
+            let mut cmd = Command::new(launcher);
             cmd.arg("-p")
                 .arg(&format!("Current profile: {}", current_profile.name()));
             cmd
@@ -78,7 +78,7 @@ fn main() -> Result<()> {
 
     let args: PPPArgs = argh::from_env();
 
-    let valid_launchers = ["fuzzel", "dmenu", "rofi", "wofi", "tofi"];
+    let valid_launchers = ["fuzzel", "dmenu", "bemenu", "rofi", "wofi", "tofi"];
     if !valid_launchers.contains(&args.launcher.as_str()) {
         anyhow::bail!(
             "Invalid launcher '{}'. Must be one of: {}",
@@ -106,7 +106,7 @@ fn main() -> Result<()> {
         "fuzzel" | "rofi" => String::from_utf8(output.stdout)?
                                 .trim()
                                 .parse::<usize>()?,
-        "dmenu" | "wofi" | "tofi" => { // for launchers that don't support indexing'
+        "dmenu" | "bemenu" | "wofi" | "tofi" => { // for launchers that don't support indexing'
             let selected_entry = String::from_utf8(output.stdout)?
                 .trim()
                 .to_string();

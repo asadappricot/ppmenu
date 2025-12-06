@@ -7,6 +7,7 @@ Power profile picker for window managers using D-Bus!
 ## Supported launchers
 
 * [`dmenu`](https://tools.suckless.org/dmenu/)
+* [`bemenu`](https://github.com/Cloudef/bemenu)
 * [`rofi`](https://github.com/davatorium/rofi)
 * [`tofi`](https://github.com/philj56/tofi)
 * [`wofi`](https://github.com/SimplyCEO/wofi)
