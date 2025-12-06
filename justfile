@@ -1,4 +1,4 @@
-BINARY := "ppp"
+BINARY := "ppmenu"
 TARGET_GLIBC := "2.17"
 
 targets := replace(

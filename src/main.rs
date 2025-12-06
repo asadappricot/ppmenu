@@ -11,8 +11,8 @@ use powerprofile::PowerProfile;
 
 #[derive(FromArgs)]
 /// Power profile selector for power-profiles-daemon (or tlp-pd) using a dmenu-compatible launcher
-struct PPPArgs {
-    /// launcher to use (supported launchers are fuzzel, rofi, walker, dmenu, bemenu, wofi, tofi)
+struct PPMenuArgs {
+    /// launcher to use (supported launchers are fuzzel, rofi, walker, dmenu, bemenu, wmenu, wofi, tofi)
     #[argh(option, short = 'l')]
     launcher: String,
 
@@ -33,11 +33,12 @@ fn main() -> Result<()> {
         Menu { name: String::from("walker"), args: format!("-d -i -p \"{}\"", placeholder), use_index: true },
         Menu { name: String::from("dmenu"), args: format!("-p \"{}\"", placeholder), use_index: false },
         Menu { name: String::from("bemenu"), args: format!("-p \"{}\"", placeholder), use_index: false },
+        Menu { name: String::from("wmenu"), args: format!("-p \"{}\"", placeholder), use_index: false },
         Menu { name: String::from("wofi"), args: format!("--show=dmenu -p \"{}\"", placeholder), use_index: false },
         Menu { name: String::from("tofi"), args: format!("-p \"{}\"", placeholder), use_index: false },
     ];
 
-    let args: PPPArgs = argh::from_env();
+    let args: PPMenuArgs = argh::from_env();
 
     let all_menu_names: Vec<String> = menus.iter().map(|m| m.name.clone()).collect();
     if !all_menu_names.contains(&args.launcher) {
@@ -54,7 +55,7 @@ fn main() -> Result<()> {
 
     if new_profile == current_profile {
         Notification::new()
-            .summary("Power Profile Picker")
+            .summary("Power Profile Menu")
             .body(&format!("Power profile is already set to {}", current_profile.name()))
             .show()?;
         return Ok(());
@@ -63,13 +64,13 @@ fn main() -> Result<()> {
     match new_profile.apply(&connection) {
         Ok(()) => {
             Notification::new()
-                .summary("Power Profile Picker")
+                .summary("Power Profile Menu")
                 .body(&format!("Power profile set to {}", new_profile.name()))
                 .show()?;
         },
         Err(e) => {
             Notification::new()
-                .summary("Power Profile Picker")
+                .summary("Power Profile Menu")
                 .body(&format!("Unable to set power profile: {:?}", e))
                 .show()?;
         }

@@ -1,13 +1,14 @@
-# Power Profile Picker (PPP)
+# Power Profile Menu (ppmenu)
 
 Power profile picker for window managers using D-Bus!
 
-<img src="./assets/demo.gif" alt="Demonstration of ppp" width="720">
+<img src="./assets/demo.gif" alt="Demonstration of ppmenu" width="720">
 
 ## Supported launchers
 
 * [`dmenu`](https://tools.suckless.org/dmenu/)
 * [`bemenu`](https://github.com/Cloudef/bemenu)
+* [`wmenu`](https://codeberg.org/adnano/wmenu)
 * [`rofi`](https://github.com/davatorium/rofi)
 * [`tofi`](https://github.com/philj56/tofi)
 * [`wofi`](https://github.com/SimplyCEO/wofi)
@@ -22,17 +23,17 @@ Power profile picker for window managers using D-Bus!
 
 ## Installation and usage
 
-Download the binary from the [latest release](https://github.com/cobaltgit/ppp/releases/latest) for your platform and drop it anywhere!
+Download the binary from the [latest release](https://github.com/cobaltgit/ppmenu/releases/latest) for your platform and drop it anywhere!
 
 Usage examples:
 
 * Basic usage:
 	```sh
-	# start ppp using dmenu
-	$ ./ppp -l dmenu
+	# start ppmenu using dmenu
+	$ ./ppmenu -l dmenu
 	```
 * Pass additional args to the launcher
 	```sh
-	# start ppp using fuzzel with coloured prompt
-	$ ./ppp -l fuzzel -a "--prompt-color=0047abff"
+	# start ppmenu using fuzzel with coloured prompt
+	$ ./ppmenu -l fuzzel -a "--prompt-color=0047abff"
 	```

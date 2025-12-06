@@ -601,8 +601,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "439ee305def115ba05938db6eb1644ff94165c5ab5e9420d1c1bcedbba909391"
 
 [[package]]
-name = "ppp"
-version = "1.2.0"
+name = "ppmenu"
+version = "1.2.1"
 dependencies = [
  "anyhow",
  "argh",
