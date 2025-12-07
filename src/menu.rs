@@ -74,7 +74,7 @@ impl Menu {
 	pub fn is_installed(&self) -> bool {
 		if let Ok(path) = env::var("PATH") {
 			for p in env::split_paths(&path) {
-				let fullpath = p.join(self.name.clone());
+				let fullpath = p.join(&self.name);
 				if fs::metadata(&fullpath).is_ok() {
 					return true
 				}
